@@ -1,0 +1,115 @@
+.scroll-block
+	overflow: auto
+	margin-left: -webkit-calc(100% - 1160px)
+	margin-left: calc(100% - 1160px)
+	
+
+	.row
+		flex-wrap: nowrap
+		margin: 0
+		
+		.col
+			width: 100%
+			min-width: 390px 
+			max-width: 390px 
+			padding: 0 15px
+			
+
+.filter-options
+	padding: 85px 0
+	display: flex
+	justify-content: space-between
+	
+	.shuffle-trigger
+		background-color: transparent
+		border: 0
+		font-size: 18px
+		text-transform: uppercase
+		color: $text-lighter  
+		cursor: pointer
+		position: relative
+		
+		&.active
+			font-weight: 800 
+			
+		&:after,
+		&:before
+			content: ''
+			width: 30px
+			border-top: 1px solid $red 
+			top: 50%
+			position: absolute
+			opacity: 0
+			transition all 0.3s ease
+			visibility: hidden
+			
+		&:after
+			right: -35px
+			
+		&:before
+			left: -35px
+			
+		&:hover,
+		&.active
+			&:before,
+			&:after
+				opacity: 1
+				visibility: visible
+
+
+
+.car-card
+	padding-bottom: 50px
+
+	.cc-price
+		display: inline-block
+		padding: 3px 15px
+		background-color: #000 
+		font-size: 13px
+		font-weight: 600  
+		transform: skew(-25deg)
+		margin-bottom: 15px 
+		
+		span
+			display: block
+			transform: skew(25deg)
+			
+
+	.cc-image
+		height: 180px
+		display: flex
+		align-items: flex-end
+		padding-bottom: 20px 
+		margin-bottom: 15px 
+		
+		img
+			display: block
+			max-width: 100%
+			max-height: 100%  
+			transition: all 0.3s ease
+			filter: drop-shadow(0 0 0 #000)
+				
+
+	.cc-title
+		font-size: 18px
+		font-weight: 600  
+		margin-bottom: 10px 
+		
+	.cc-actions
+		display: flex
+		justify-content: space-between
+		padding-top: 50px 
+		opacity: 0
+		transition: all 0.3s ease
+		
+		.btn
+			width: 48%
+			
+
+	&:hover
+		.cc-image
+			img
+				filter: drop-shadow(0 0 15px rgba(255, 255, 255, .1))
+
+		.cc-actions
+			opacity: 1

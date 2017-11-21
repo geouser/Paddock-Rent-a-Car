@@ -131,7 +131,40 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   mCustomScrollar
     ---------------------------*/
-    $(".scroll").mCustomScrollbar();
+    if ( !window.params.isMobile ) {
+        $(".scroll-y").mCustomScrollbar({
+            axis: 'y'
+        });
+
+        $(".scroll-x").mCustomScrollbar({
+            axis: 'x'
+        });    
+    }
+    
+
+
+
+    $('.shuffle-trigger').on('click', function(event) {
+        event.preventDefault();
+        $(this).addClass('active').siblings().removeClass('active');
+        var filter = $(this).attr('data-group');
+        $('.shuffle-item').css('display', 'none');
+
+        $('.shuffle-item').each(function(index, el) {
+            var groups = jQuery.parseJSON($(this).attr('data-groups'));
+            if ( jQuery.inArray(filter, groups) > -1 ) {
+                $(this).fadeIn();
+            }
+        });
+        if ( !window.params.isMobile ) {
+            $(".scroll-x").mCustomScrollbar("destroy");
+            $(".scroll-x").mCustomScrollbar({
+                axis: 'x'
+            });
+        }
+        
+        
+    });
 
 
     /*---------------------------

@@ -12,7 +12,10 @@
 		&:after
 			content: '/'
 			color: $red
-			
+
+
+.reservation-form
+	margin-bottom: -25px 			
 
 
 
@@ -194,6 +197,7 @@
 		color: #fff
 		background-color: rgba(0, 0, 0, .8) 
 		max-height: 300px 
+		overflow: auto
 		padding: 10px 0
 		opacity: 0
 		visibility: hidden
@@ -259,6 +263,17 @@
 			&:hover
 				background-color: $red 
 				
+	&.mCSB_scrollTools_horizontal 
+		.mCSB_dragger 
+			height: 15px
+			.mCSB_dragger_bar
+				height: 8px
+				margin: 4px auto
+				
+		.mCSB_draggerRail
+			height: 1px
+				
 .mCSB_container
 	margin-right: 16px!important
 				
+
