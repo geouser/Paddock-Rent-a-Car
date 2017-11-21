@@ -119,6 +119,50 @@ jQuery(document).ready(function($) {
     }
 
 
+    /*---------------------------
+                                  jQuery UI datepicker
+    ---------------------------*/
+    $( ".js-date" ).datepicker({
+        minDate: 0,
+        dateFormat: "MM dd, yy"
+    });
+
+
+    /*---------------------------
+                                  mCustomScrollar
+    ---------------------------*/
+    $(".scroll").mCustomScrollbar();
+
+
+    /*---------------------------
+                                  Car Select
+    ---------------------------*/
+    $('.js-select-button').on('click', function(event) {
+        event.preventDefault();
+        var list = $(this).siblings('.select-list');
+        list.toggleClass('active');
+    });
+
+
+    $('.select-list .list-item').on('click', function(event) {
+        event.preventDefault();
+        var list = $(this).parents('.select-list');
+        var button = list.siblings('.js-select-button');
+        var input = list.siblings('input');
+
+        var value = $(this).attr('data-value');
+        button.addClass('selected').text(value);
+        $(this).siblings().removeClass('selected');
+        $(this).addClass('selected');
+        list.removeClass('active');
+    });
+
+    $(document).on('click', function(event) {
+        event.preventDefault();
+        if ( !$(event.target).closest('.js-select-button').length ) {
+            $('.select-list').removeClass('active')
+        }
+    });
 
     /*---------------------------
                                   Form submit
