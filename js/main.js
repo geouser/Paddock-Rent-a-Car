@@ -137,7 +137,8 @@ jQuery(document).ready(function($) {
         });
 
         $(".scroll-x").mCustomScrollbar({
-            axis: 'x'
+            axis: 'x',
+            advanced:{ autoExpandHorizontalScroll: 2 }
         });    
     }
     
@@ -159,7 +160,8 @@ jQuery(document).ready(function($) {
         if ( !window.params.isMobile ) {
             $(".scroll-x").mCustomScrollbar("destroy");
             $(".scroll-x").mCustomScrollbar({
-                axis: 'x'
+                axis: 'x',
+                advanced:{ autoExpandHorizontalScroll: 2 }
             });
         }
         
