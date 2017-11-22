@@ -192,8 +192,7 @@ jQuery(document).ready(function($) {
     });
 
     $(document).on('click', function(event) {
-        event.preventDefault();
-        if ( !$(event.target).closest('.js-select-button').length ) {
+        if ( !$(event.target).closest('.js-select-button').length && !$(event.target).closest('.select-list').length ) {
             $('.select-list').removeClass('active')
         }
     });

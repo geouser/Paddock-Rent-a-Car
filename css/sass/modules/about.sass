@@ -1,0 +1,32 @@
+.page-heading
+	padding: 0
+	height: 100%
+	display: flex
+	align-items: center 
+	
+	@media (max-height: 860px) and (min-width: 1200px)
+		.article
+			p,
+			h2,
+			h3
+				&:not(:last-child)
+					margin-bottom: 1rem
+					
+	@media (max-height: 700px) and (min-width: 1200px)
+		.article
+			font-size: 13px 
+
+	img
+		max-width: 100%
+		margin: 0 auto 75px
+		display: block
+		
+		@media (max-height: 960px) and (min-width: 1200px)
+			height: 400px
+			
+		@media (max-height: 860px) and (min-width: 1200px)
+			height: 300px
+			margin-bottom: 50px 
+			
+		@media (max-height: 700px) and (min-width: 1200px)
+			margin-bottom: 40px 
