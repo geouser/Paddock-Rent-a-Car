@@ -20,7 +20,6 @@
 	.text-block
 		width: 44%
 		padding: 100px 0
-		
 
 		ul
 			li
@@ -32,6 +31,12 @@
 				
 				&.small
 					width: 330px
+					max-width: 100% 
+					
+				&.medium
+					width: 480px
+					max-width: 100% 
+
 				
 				&:not(:last-child)
 					margin-bottom: 100px 
@@ -65,3 +70,14 @@
 		.button-group
 			margin-top: 190px
 			transform: translateX(-87px) 
+	
+		&--fluid
+			ul
+				height: 100%
+				display: flex	
+				flex-direction: column	
+				align-items: flex-start
+				justify-content: space-around 
+				li	 
+					&:not(:last-child)
+						margin-bottom: 20px
