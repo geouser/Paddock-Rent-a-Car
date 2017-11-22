@@ -1,0 +1,355 @@
+body	
+	padding-left: 310px 
+	
+	@media (max-width: 1500px) and (min-width: 1200px)
+		padding-left: 240px 
+
+.sidebar
+	position: fixed
+	z-index: 5 
+	height: 100%
+	max-height: 100% 
+	width: 310px
+	top: 0
+	left: 0
+	bottom: 0
+	display: flex
+	align-items: stretch
+	
+	@media (max-width: 1500px) and (min-width: 1200px)
+		width: 240px
+
+
+	&-main-area
+		width: 230px
+		background-color: #000 
+		padding-top: 200px 
+		padding-bottom: 80px 
+		position: relative
+		display: flex
+		align-items: center
+		
+		@media (max-height: 750px) and (min-width: 1200px)
+			padding-top: 160px 
+			
+		@media (max-width: 1500px) and (min-width: 1200px)
+			width: 170px
+		
+		.logo
+			position: absolute
+			height: 150px
+			top: 30px
+			left: 50%
+			transform: translateX(-50%)
+			
+			@media (max-height: 750px) and (min-width: 1200px)
+				height: 120px
+				top: 20px
+			
+			img
+				display: block
+				height: 100%
+				
+		.make-reservation
+			position: absolute
+			bottom: 20px
+			left: 50%
+			transform: translateX(-50%)
+			width: 155px
+			min-width: 0 
+			white-space: nowrap
+			
+			@media (max-width: 1500px) and (min-width: 1200px)
+				width: 140px
+		
+	&-navigation-area
+		width: 80px
+		background-color: $blue 
+		padding-top: 90px 
+		position: relative
+		
+		@media (max-height: 750px) and (min-width: 1200px)
+			padding-top: 40px 
+		
+		@media (max-width: 1500px) and (min-width: 1200px)
+			width: 70px
+
+		.menu-button
+			width: 34px
+			height: 34px
+			background-color: transparent
+			border: 1px solid #fff
+			color: #fff 
+			margin: 0 auto
+			cursor: pointer
+			display: block
+			transition: all 0.3s ease
+			
+			&:hover
+				background-color: #FFF
+				color: $blue 
+				
+			&.is-active
+				background-color: #FFF
+				color: $blue 
+				.icon-menu
+					&:before
+						content: '\e905'
+						
+
+
+		.language-switcher
+			width: 34px
+			margin: 25px auto 0
+			padding: 5px 0
+			text-align: center
+			border: 1px solid transparent
+			font-size: 13px 
+			
+			.lang-item
+				opacity: 0
+				display: none
+				color: #fff
+				font-weight: 600 
+				padding: 2px 0
+				
+				&.current-lang
+					opacity: 1!important
+					display: block
+					
+			&:hover
+				transition: border-color 0.2s ease
+				border-color: #fff
+				
+				.lang-item
+					transition: all 0.2s ease
+					display: block
+					opacity: 0.5
+					
+		&.active
+			.language-switcher
+				transition: border-color 0.2s ease
+				border-color: #fff
+				
+				.lang-item
+					transition: all 0.2s ease
+					display: block
+					opacity: 0.5
+					
+
+
+		.main-menu
+			width: 0
+			position: absolute
+			top: 0
+			left: 100%
+			bottom: 0
+			background-color: $blue 
+			padding-top: 240px 
+			transition: all 0.3s ease
+			
+			@media (max-height: 750px) and (min-width: 1200px)
+				padding-top: 200px 
+			
+			ul
+				white-space: nowrap
+				overflow: hidden
+				opacity: 0
+				visibility: hidden
+				transition: all 0.3s ease
+			
+			.menu-item
+				list-style: none 
+				
+				&:not(:last-child)
+					margin-bottom: 35px
+					
+					@media (max-height: 750px) and (min-width: 1200px)
+						margin-bottom: 15px 
+					 
+				a
+					text-transform: uppercase
+					color: $text-lighter
+					font-size: 16px 
+					position: relative
+					
+					&:after,
+					&:before
+						content: ''
+						width: 30px
+						border-top: 1px solid $text-lighter
+						top: 50%
+						position: absolute
+						opacity: 0
+						visibility: hidden
+						transition: all 0.3s ease
+						
+						
+					&:after
+						right: -35px
+						
+					&:before
+						left: -35px
+						
+				a:hover,
+				&.current-menu-item a
+					&:after,
+					&:before
+						opacity: 1
+						visibility: visible
+						
+
+			&.active
+				width: 150px
+				
+				ul
+					opacity: 1
+					visibility: visible
+					overflow: visible
+					
+
+		.contact-info
+			position: absolute
+			bottom: 20px
+			width: 100%
+			
+			.ci-item
+				position: relative
+				width: 100%
+				display: block
+				
+				&:not(:last-child)
+					margin-bottom: 8px 
+				
+				.icon
+					width: 34px
+					height: 34px
+					display: flex
+					align-items: center
+					justify-content: center
+					color: $text-lighter
+					border: 1px solid $text-lighter
+					border-radius: 50%
+					margin: 0 auto
+					
+					&:after
+						content: attr(data-tooltip)
+						position: absolute
+						left: 100%
+						background-color: $red
+						color: #fff
+						padding: 5px 10px 
+						white-space: nowrap
+						font-size: 14px
+						transition: all 0.3s ease
+						margin-left: 0
+						opacity: 0
+						visibility: hidden
+						border-left: 4px solid transparent 
+						border-image: url(../images/red-arrow.png) 4 round round;
+						background-clip: padding-box
+						
+					&:hover
+						&:after
+							margin-left: 15px
+							opacity: 1
+							visibility: visible
+					
+				.number
+					position: absolute
+					top: 50%
+					left: 100%
+					transform: translateY(-50%)
+					width: 0
+					white-space: nowrap
+					opacity: 0
+					transition: all 0.3s ease
+					overflow: hidden
+					color: $text-lighter
+					
+					&:hover
+						text-decoration: underline
+					
+
+		&.active
+			.contact-info
+				.ci-item
+					.icon
+						&:after
+							display: none
+							
+					.number
+						opacity: 1
+						width: 150px
+		
+
+
+
+		
+
+
+
+
+
+.category-menu
+	padding: 15px
+	overflow: auto
+	width: 100%
+	max-height: 100% 
+	
+	.menu-item
+		display: block
+		text-align: center
+		
+		&:not(:last-child)
+			margin-bottom: 80px 
+			
+			@media (max-height: 750px) and (min-width: 1200px)
+				margin-bottom: 40px 
+		
+		.image
+			display: block
+			margin-bottom: 5px 
+			
+			img
+				display: block
+				margin: 0 auto
+				max-width: 90% 
+				filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0))
+				transition: all 0.3s ease
+				
+		.label
+			display: inline-block
+			font-size: 12px
+			text-transform: uppercase
+			color: $text-lighter 
+			position: relative
+			
+			&:after,
+			&:before
+				content: ''
+				width: 20px
+				border-top: 1px solid $red 
+				top: 50%
+				position: absolute
+				opacity: 0
+				transition: all 0.3s ease
+				visibility: hidden
+				
+			&:after
+				right: -25px
+				
+			&:before
+				left: -25px
+				
+
+
+		&:hover
+			.image img
+				filter: drop-shadow(0 0 12px rgba(255, 255, 255, .3))
+				
+			.label
+				&:before,
+				&:after
+					opacity: 1
+					visibility: visible
