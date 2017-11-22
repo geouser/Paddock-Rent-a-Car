@@ -132,12 +132,17 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     if ( !window.params.isMobile ) {
         $(".scroll-y").mCustomScrollbar({
-            axis: 'y'
+            axis: 'y',
+            mouseWheel: { 
+                scrollAmount: 90
+            }
         });
 
         $(".scroll-x").mCustomScrollbar({
             axis: 'x',
-            advanced:{ autoExpandHorizontalScroll: 2 }
+            advanced: {
+                autoExpandHorizontalScroll: 2
+            }
         });    
     }
     

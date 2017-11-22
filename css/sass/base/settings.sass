@@ -20,7 +20,19 @@ body
 	letter-spacing: 0.2em
 	text-transform: uppercase
 	font-size: 56px
+	margin-top: -15px 
 	color: $text-lighter 
+	
+	@media (max-height: 860px) and (min-width: 1200px)
+		font-size: 46px
+		margin-top: -12px
+		letter-spacing: 0.15em  
+	
+	&.smaller
+		letter-spacing: 0.1em
+		font-weight: 800
+		font-size: 36px 
+		margin-top: -10px   
 	
 	&:after
 		content: '/'
