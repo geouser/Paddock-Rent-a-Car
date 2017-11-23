@@ -1,0 +1,71 @@
+.gallery
+	margin-top: 60px
+	
+	.gallery-grid
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: flex-start
+		width: 100%
+	
+	.gg-item
+		width: 290px
+		padding: 0 15px
+		margin-bottom: 30px 
+		position: relative
+		
+		&:after
+			@extend .icomoon-icon
+			content: ''
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			background-color: $red
+			color: #fff 
+			position: absolute
+			top: 50%
+			left: 50%
+			display: flex
+			align-items: center
+			justify-content: center
+			margin-top: -20px
+			margin-left: -20px  
+			transition: all 0.3s ease
+			transform: scale(0.75)
+			opacity: 0
+			font-size: 18px 
+			
+		&.video
+			&:after
+				content: '\e914'
+				
+		&.photo
+			&:after
+				content: '\e920'
+		
+		
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 15px
+			right: 15px
+			height: 100%
+			background-color: #000
+			opacity: 0
+			transition: all 0.3s ease
+			transform: scale(0.75)
+			
+		&:hover
+			&:before
+				opacity: 0.3
+				transform: scale(1)
+				
+			&:after
+				opacity: 1
+				transform: scale(1)
+				
+
+		img
+			display: block
+			width: 100%

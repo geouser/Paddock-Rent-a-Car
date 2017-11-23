@@ -167,10 +167,56 @@ jQuery(document).ready(function($) {
                 axis: 'x',
                 advanced:{ autoExpandHorizontalScroll: 2 }
             });
+            $('.gallery-grid').each(function(index, el) {
+                gridWidth( $(this) );
+            });
         }
-        
+         
         
     });
+
+
+    /*---------------------------
+                                  Gallery
+    ---------------------------*/
+    function gridWidth( element ) {
+        element.each(function(index, el) {
+            var rows = $(this).attr('data-rows')*1;
+            var count = $(this).find('.gg-item:visible').length;
+            var itemWidth = $('.gg-item').outerWidth();
+            var parentWidth = Math.floor($('.scroll-block').width());
+            //$('.scroll-block').width(parentWidth);
+            var width;
+
+            if ( (itemWidth * count) >= ( Math.floor(parentWidth / itemWidth) * itemWidth * rows ) ) {
+                width = (Math.ceil(count / rows)) * $('.gg-item').outerWidth();
+            } else {
+                width = parentWidth - 5;
+            }           
+            $(this).width(width)
+        }); 
+    }
+
+    if ( !window.params.isMobile ) {
+        $('.gallery-grid').each(function(index, el) {
+            gridWidth( $(this) );
+        }); 
+    }
+
+    $(window).on('resize', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        if ( !window.params.isMobile ) {
+            $('.gallery-grid').each(function(index, el) {
+                gridWidth( $(this) );
+            }); 
+        }
+    });
+    
+
+
+
+
 
 
     /*---------------------------

@@ -49,6 +49,24 @@
 
 
 
+.fancybox-arrow
+	@extend .icomoon-icon
+	
+	&:after
+		display: flex
+		align-items: center
+		justify-content: center
+		color: #fff!important
+	
+	&--left
+		transform: none
+		&:after
+			content: '\e91c'!important
+			
+	&--right
+		&:after
+			content: '\e91d'!important
+
 /* ------------------------------------ */
 /*  SLICK ARROWS  */
 .slick-arrow,
