@@ -2,6 +2,9 @@
 	display: flex
 	align-items: stretch
 	
+	@media (max-width: 1199px)
+		display: block
+	
 	.image-block
 		width: 56%
 		background-size: cover 
@@ -9,37 +12,82 @@
 		padding: 100px 0
 		background-position: 50% 50% 
 		
+		@media (max-width: 1199px)
+			width: 100%
+			height: auto
+			padding: 125px 15px
+		
 		.section-title
 			width: 460px
 			margin-left: calc(100% - 670px)
 			
 			@media (max-width: 1410px)
 				margin-left: 15px 
+				
+			@media (max-width: 1199px)
+				width: 960px
+				padding: 0 15px
+				margin: 0 auto
+				
+			@media (max-width: 991px)
+				width: 720px
+				
+			@media (max-width: 767px)
+				width: 540px
+				
+			@media (max-width: 575px)
+				width: 100%
+			
 		
 	.list-block,
 	.text-block
-		width: 44%
-		padding: 100px 0
+		@extend .container
+		
+		@media (min-width: 1200px)
+			max-width: 100% 
+			width: 44%
+			padding: 100px 0
+			
+		@media (max-width: 1199px)
+			padding-top: 75px
+			padding-bottom: 75px  
 
 		ul
+			@media (max-width: 1199px)
+				display: flex
+				flex-wrap: wrap
+				
 			li
 				padding-left: 80px
 				position: relative 
 				padding-right: 15px 
 				width: 470px
 				max-width: 100% 
+				list-style: none 
 				
-				&.small
-					width: 330px
-					max-width: 100% 
+				@media (max-width: 1199px)
+					width: 50%
+					padding-left: 95px 
 					
-				&.medium
-					width: 480px
-					max-width: 100% 
+				@media (max-width: 767px)
+					width: 100%
+					padding-left: 80px 
+				
+				@media (min-width: 1200px)
+					&.small
+						width: 330px
+						max-width: 100% 
+						
+					&.medium
+						width: 480px
+						max-width: 100% 
 
 				
 				&:not(:last-child)
 					margin-bottom: 100px 
+					
+					@media (max-width: 1199px)
+						margin-bottom: 50px 
 
 				.lb-icon
 					width: 65px
@@ -56,6 +104,13 @@
 					left: 0
 					transform: translateX(-50%)
 					
+					@media (max-width: 1199px)
+						transform: none
+						left: 15px
+						
+					@media (max-width: 767px)
+						left: 0
+					
 				.lb-content
 					font-size: 13px
 					 
@@ -70,6 +125,10 @@
 		.button-group
 			margin-top: 190px
 			transform: translateX(-87px) 
+			
+			@media (max-width: 1199px)
+				margin-top: 50px
+				transform: none 
 	
 		&--fluid
 			ul

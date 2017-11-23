@@ -1,0 +1,37 @@
+.mobile-header
+	@media (min-width: 1200px)
+		display: none
+		
+	background-color: #fff
+	padding: 5px 0
+	position: fixed
+	z-index: 10 
+	top: 0
+	left: 0
+	right: 0 
+	background-color: #000
+	
+	.mh-phone
+		font-size: 13px 
+		color: #fff
+		
+		span
+			margin-right: 5px 
+	
+	.mh-logo
+		width: 50px
+		display: inline-block
+		margin: 0 auto
+		position: relative
+		left: 50%
+		transform: translateX(-50%)
+		
+		img
+			display: block
+			width: 100%
+	
+
+.mh-menu-button
+	@extend .menu-button
+	display: block
+	margin: 0 0 0 auto

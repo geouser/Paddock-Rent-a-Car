@@ -1,6 +1,14 @@
 .gallery
 	margin-top: 60px
 	
+	@media (max-width: 1199px)
+		margin-bottom: -30px 
+	
+	@media (max-width: 991px)
+		margin-top: 35px 
+		padding: 0 5px
+		margin-bottom: -20px 
+	
 	.gallery-grid
 		display: flex
 		flex-wrap: wrap
@@ -13,6 +21,19 @@
 		padding: 0 15px
 		margin-bottom: 30px 
 		position: relative
+		
+		@media (max-width: 1199px)
+			width: 25%
+			
+		@media (max-width: 991px)
+			padding: 0 10px
+			margin-bottom: 20px 
+			
+		@media (max-width: 575px)
+			width: 33.33%
+			
+		@media (max-width: 420px)
+			width: 50%
 		
 		&:after
 			@extend .icomoon-icon

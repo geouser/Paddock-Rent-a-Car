@@ -1,8 +1,10 @@
 .page-heading
-	padding: 0
 	height: 100%
 	display: flex
 	align-items: center 
+	
+	@media (min-width: 1200px)
+		padding: 0
 	
 	@media (max-height: 860px) and (min-width: 1200px)
 		.article
@@ -15,6 +17,9 @@
 	@media (max-height: 700px) and (min-width: 1200px)
 		.article
 			font-size: 13px 
+			
+	@media (max-width: 1199px)
+		height: auto
 
 	img
 		max-width: 100%

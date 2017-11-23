@@ -27,6 +27,21 @@ body
 		font-size: 46px
 		margin-top: -12px
 		letter-spacing: 0.15em  
+		
+	@media (max-width: 1199px)
+		font-size: 46px
+		letter-spacing: 0.05em
+		
+	@media (max-width: 991px)
+		font-size: 42px
+		letter-spacing: normal 
+		font-weight: 800
+		
+	@media (max-width: 767px)
+		font-size: 36px
+		
+	@media (max-width: 575px)
+		font-size: 32px   
 	
 	&.smaller
 		letter-spacing: 0.1em
@@ -48,6 +63,10 @@ body
 
 .section
 	padding: 100px 0
+	
+	@media (max-width: 991px)
+		padding: 75px 0
+		
 	&--smPad
 		padding: 50px 0 
 		
@@ -59,6 +78,9 @@ body
 		margin-bottom: 15px !important
 		
 .article
+	@media (max-width: 991px)
+		padding-top: 35px
+
 	h3
 		font-size: 1.7em
 		color: $blue

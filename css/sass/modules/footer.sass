@@ -7,6 +7,10 @@
 		padding-bottom: 75px  
 		position: relative
 		
+		@media (max-width: 991px)
+			padding-top: 50px
+			padding-bottom: 50px  
+		
 	.studio
 		position: absolute
 		bottom: 0
@@ -17,13 +21,28 @@
 		color: #fff
 		padding: 2px 12px  
 		
+		@media (max-width: 991px)
+			position: static
+			text-align: center
+			background-color: transparent 
+			display: block
+			margin-right: 0 
+		
 	.copyright
 		font-size: 12px
 		color: #646464
 		transform: translateY(-100%) 
+		
+		@media (max-width: 991px)
+			transform: none
+			text-align: center
 	
 
 .footer-widget
+
+	@media (max-width: 991px)
+		margin-bottom: 50px
+
 	.fw-title
 		font-size: 18px
 		text-transform: uppercase 
@@ -105,3 +124,6 @@
 	& + .payment-options
 		margin-top: 60px 
 		display: block
+		
+		@media (max-width: 575px)
+			margin-top: 30px 

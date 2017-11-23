@@ -87,6 +87,13 @@ jQuery(document).ready(function($) {
     });
 
 
+    $('.js-toggle-site-menu').on('click', function(event) {
+        event.preventDefault();
+        $(this).toggleClass('is-active');
+        $('.sidebar').toggleClass('active')
+    });
+
+
 
     /*---------------------------
                                   Fancybox

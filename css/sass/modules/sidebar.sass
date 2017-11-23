@@ -3,6 +3,9 @@ body
 	
 	@media (max-width: 1500px) and (min-width: 1200px)
 		padding-left: 240px 
+		
+	@media (max-width: 1199px)
+		padding-left: 0 
 
 .sidebar
 	position: fixed
@@ -18,6 +21,19 @@ body
 	
 	@media (max-width: 1500px) and (min-width: 1200px)
 		width: 240px
+		
+	@media (max-width: 1199px)
+		width: 240px
+		display: block
+		overflow: auto
+		transform: translateX(-100%)
+		z-index: 20 
+		transition: all 0.3s ease
+		
+		&.active
+			transform: translateX(0)
+		
+
 
 
 	&-main-area
@@ -34,6 +50,11 @@ body
 			
 		@media (max-width: 1500px) and (min-width: 1200px)
 			width: 170px
+			
+		@media (max-width: 1199px)
+			width: 100%
+			padding: 20px 15px
+			display: block
 		
 		.logo
 			position: absolute
@@ -45,10 +66,18 @@ body
 			@media (max-height: 750px) and (min-width: 1200px)
 				height: 120px
 				top: 20px
+				
+			@media (max-width: 1199px)
+				height: 100px
+				position: static
+				margin-bottom: 20px
+				display: block
+				transform: none
 			
 			img
 				display: block
 				height: 100%
+				margin: 0 auto
 				
 		.make-reservation
 			position: absolute
@@ -61,6 +90,13 @@ body
 			
 			@media (max-width: 1500px) and (min-width: 1200px)
 				width: 140px
+				
+			@media (max-width: 1199px)
+				position: static
+				transform: none
+				margin: 0 auto
+				display: flex
+				margin-top: 20px 
 		
 	&-navigation-area
 		width: 80px
@@ -73,28 +109,12 @@ body
 		
 		@media (max-width: 1500px) and (min-width: 1200px)
 			width: 70px
-
-		.menu-button
-			width: 34px
-			height: 34px
-			background-color: transparent
-			border: 1px solid #fff
-			color: #fff 
-			margin: 0 auto
-			cursor: pointer
-			display: block
-			transition: all 0.3s ease
 			
-			&:hover
-				background-color: #FFF
-				color: $blue 
-				
-			&.is-active
-				background-color: #FFF
-				color: $blue 
-				.icon-menu
-					&:before
-						content: '\e905'
+		@media (max-width: 1199px)
+			width: 100%
+			padding: 20px 15px
+
+
 						
 
 
@@ -106,13 +126,31 @@ body
 			border: 1px solid transparent
 			font-size: 13px 
 			
+			@media (max-width: 1199px)
+				border: 1px solid #fff
+				width: auto
+				padding: 5px 15px
+				display: inline-flex
+				margin-top: 0 
+				position: relative
+				left: 50%
+				transform: translateX(-50%)
+				
+			
 			.lang-item
-				opacity: 0
-				display: none
 				color: #fff
 				font-weight: 600 
 				padding: 2px 0
+				opacity: 0.5
 				
+				@media (min-width: 1200px)
+					display: none
+					opacity: 0
+					
+				@media (max-width: 1199px)
+					&:not(:last-child)
+						margin-right: 15px 
+					
 				&.current-lang
 					opacity: 1!important
 					display: block
@@ -150,13 +188,21 @@ body
 			
 			@media (max-height: 750px) and (min-width: 1200px)
 				padding-top: 200px 
+				
+			@media (max-width: 1199px)
+				position: static
+				width: 100%!important
+				opacity: 1
+				padding: 40px 0
+				text-align: center
 			
 			ul
-				white-space: nowrap
-				overflow: hidden
-				opacity: 0
-				visibility: hidden
-				transition: all 0.3s ease
+				@media (min-width: 1200px)
+					white-space: nowrap
+					overflow: hidden
+					opacity: 0
+					visibility: hidden
+					transition: all 0.3s ease
 			
 			.menu-item
 				list-style: none 
@@ -165,6 +211,9 @@ body
 					margin-bottom: 35px
 					
 					@media (max-height: 750px) and (min-width: 1200px)
+						margin-bottom: 15px 
+						
+					@media (max-width: 1199px)
 						margin-bottom: 15px 
 					 
 				a
@@ -213,10 +262,18 @@ body
 			bottom: 20px
 			width: 100%
 			
+			@media (max-width: 1199px)
+				position: static
+			
 			.ci-item
 				position: relative
 				width: 100%
 				display: block
+				
+				@media (max-width: 1199px)
+					display: flex
+					flex-wrap: wrap
+					align-items: center
 				
 				&:not(:last-child)
 					margin-bottom: 8px 
@@ -249,6 +306,9 @@ body
 						border-image: url(../images/red-arrow.png) 4 round round;
 						background-clip: padding-box
 						
+						@media (max-width: 1199px)
+							display: none
+						
 					&:hover
 						&:after
 							margin-left: 15px
@@ -267,6 +327,15 @@ body
 					overflow: hidden
 					color: $text-lighter
 					
+					@media (max-width: 1199px)
+						position: static
+						transform: none
+						padding-left: 10px
+						width: -webkit-calc(100% - 34px) 
+						width: calc(100% - 34px) 
+						opacity: 1
+						visibility: visible
+					
 					&:hover
 						text-decoration: underline
 					
@@ -284,6 +353,30 @@ body
 		
 
 
+.menu-button
+	width: 34px
+	height: 34px
+	background-color: transparent
+	border: 1px solid #fff
+	color: #fff 
+	margin: 0 auto
+	cursor: pointer
+	display: block
+	transition: all 0.3s ease
+	
+	@media (max-width: 1199px)
+		display: none
+	
+	&:hover
+		background-color: #FFF
+		color: $blue 
+		
+	&.is-active
+		background-color: #FFF
+		color: $blue 
+		.icon-menu
+			&:before
+				content: '\e905'
 
 		
 
@@ -306,6 +399,9 @@ body
 			
 			@media (max-height: 750px) and (min-width: 1200px)
 				margin-bottom: 40px 
+				
+			@media (max-width: 1199px)
+				margin-bottom: 30px 
 		
 		.image
 			display: block
@@ -317,6 +413,9 @@ body
 				max-width: 90% 
 				filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0))
 				transition: all 0.3s ease
+				
+				@media (max-width: 1199px)
+					max-width: 80% 
 				
 		.label
 			display: inline-block

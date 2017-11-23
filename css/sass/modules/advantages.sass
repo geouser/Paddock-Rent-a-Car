@@ -7,24 +7,47 @@
 		top: 105px
 		pointer-events: none
 		
+		@media (max-width: 991px)
+			display: none
+		
 
 .blue-car-box
 	position: relative
 	height: 240px
+	
+	@media (max-width: 991px)
+		height: auto
 	
 	> img
 		position: absolute
 		left: -125px
 		bottom: 5px
 		pointer-events: none
+		
+		@media (max-width: 991px)
+			display: none
 
 
+.plus-list
+	@media (max-width: 991px)
+		padding-top: 50px
+		display: flex
+		flex-wrap: wrap 
 
 .plus-item
 	width: 290px
 	position: absolute
 	display: flex
 	align-items: center
+	
+	@media (max-width: 991px)
+		position: static
+		margin-bottom: 50px
+		width: 50% 
+		padding-right: 15px
+		
+	@media (max-width: 767px)
+		width: 100%
 	
 	&:nth-child(1)
 		left: 0
@@ -34,9 +57,15 @@
 		left: 220px
 		top: -50px
 		
+		@media (max-width: 1400px)
+			left: 150px
+		
 	&:nth-child(3)
 		left: 290px
 		top: 120px
+		
+		@media (max-width: 1400px)
+			left: 175px
 		
 	&:nth-child(4)
 		left: 85px
@@ -65,3 +94,6 @@
 
 .pluses
 	padding-top: 200px 
+	
+	@media (max-width: 991px)
+		padding-top: 75px 
