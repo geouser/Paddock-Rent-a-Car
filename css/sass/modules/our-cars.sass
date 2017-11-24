@@ -2,6 +2,7 @@
 	overflow: auto
 	margin-left: -webkit-calc( (50% - 568px) + 0.2px )
 	margin-left: calc( (50% - 568px) + 0.2px )
+	-webkit-overflow-scrolling: touch
 	
 	&.top-space
 		padding-top: 60px
@@ -48,7 +49,11 @@
 .filter-options
 	padding: 85px 0
 	display: flex
+	//flex-wrap: wrap
 	justify-content: space-between
+	
+	@media (max-width: 1199px)
+		justify-content: flex-start
 	
 	@media (max-width: 991px)
 		padding: 50px 0
@@ -62,20 +67,7 @@
 		
 		@media (max-width: 991px)
 			padding-top: 35px 
-		
-		.shuffle-trigger
-			&:not(:last-child)
-				margin-right: 90px 
-				
-				@media (max-width: 991px)
-					margin-right: 75px
-					
-				@media (max-width: 767px)
-					margin-right: 50px  
-					
-				@media (max-width: 575px)
-					margin-right: 30px 
-	
+			
 	.shuffle-trigger
 		background-color: transparent
 		border: 0
@@ -84,6 +76,26 @@
 		color: $text-lighter  
 		cursor: pointer
 		position: relative
+		width: auto
+		displau: inline-block
+		
+		&:not(:last-child)
+			margin-right: 90px 
+			
+			@media (min-width: 1200px)
+				margin-right: 0 
+			
+			@media (max-width: 1199px)
+				margin-right: 30px 
+			
+			@media (max-width: 991px)
+				margin-right: 50px
+				
+			@media (max-width: 767px)
+				margin-right: 30px  
+				
+			@media (max-width: 575px)
+				margin-right: 20px 
 		
 		@media (max-width: 991px)
 			font-size: 16px 
@@ -105,19 +117,19 @@
 			transition: all 0.3s ease
 			visibility: hidden
 			
-			@media (max-width: 991px)
+			@media (max-width: 1199px)
 				width: 15px
 			
 		&:after
 			right: -35px
 			
-			@media (max-width: 991px)
+			@media (max-width: 1199px)
 				right: -20px
 			
 		&:before
 			left: -35px
 			
-			@media (max-width: 991px)
+			@media (max-width: 1199px)
 				left: -20px
 			
 		&:hover,
@@ -133,7 +145,7 @@
 	padding: 0 15px 50px
 	
 	@media (max-width: 1199px)
-		padding-bottom: 0
+		padding-bottom: 2px
 		 
 
 	.cc-price
@@ -197,7 +209,8 @@
 		.btn
 			width: 48%
 			min-width: 	48% 
-			padding: 0 10px
+			padding-left: 10px
+			padding-right: 10px  
 			
 			@media (max-width: 991px)
 				height: 44px

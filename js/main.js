@@ -160,9 +160,11 @@ jQuery(document).ready(function($) {
         event.preventDefault();
         $(this).addClass('active').siblings().removeClass('active');
         var filter = $(this).attr('data-group');
-        $('.shuffle-item').css('display', 'none');
+        var container = $( $(this).parents('.filter-options').attr('data-shuffle-box') );
+        container.find('.shuffle-item').css('display', 'none');
+        console.log(container)
 
-        $('.shuffle-item').each(function(index, el) {
+        container.find('.shuffle-item').each(function(index, el) {
             var groups = jQuery.parseJSON($(this).attr('data-groups'));
             if ( jQuery.inArray(filter, groups) > -1 ) {
                 $(this).fadeIn();
