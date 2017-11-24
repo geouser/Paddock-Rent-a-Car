@@ -57,8 +57,20 @@ body
 	&--small
 		font-size: 36px 
 		letter-spacing: .1em 
+		margin-top: -10px 
+		font-weight: 800
+		
+		@media (max-width: 991px)
+			letter-spacing: normal 
+			
+		@media (max-width: 575px)
+			font-size: 32px 
+		 
 		& + .button-group
 			margin-top: 60px 
+			
+			@media (max-width: 1199px)
+				margin-top: 30px 
 		
 
 .section
@@ -72,10 +84,13 @@ body
 		
 .top-80
 	margin-top: 80px 
-.scroll-y--sm
-	height: 230px 
-	p
-		margin-bottom: 15px !important
+	
+
+@media (min-width: 1200px)
+	.scroll-y--sm
+		height: 230px 
+		p
+			margin-bottom: 15px !important
 		
 .article
 	@media (max-width: 991px)
@@ -93,41 +108,63 @@ body
 		&:not(:last-child)
 			margin-bottom: 2rem
 			
+			@media (max-width: 1199px)
+				margin-bottom: 1.5rem 
+			
 
 .table
 	width: 	100% 
 	display: block	
 	text-align: center	
+	
+	@media (max-width: 991px)
+		margin-top: 35px
+		 
 	tbody
 	 	width: 	100%
-	 	display: block	 
+	 	display: block	
+	 	 
 	tr
 		display: flex
+		
 	th
 		text-transform: uppercase	
 		border: 1px solid #c3c3c3 
 		border-right: none	
 		flex: 1	
-		font-size: 	14px 
-		font-size: 	16px 
-		font-weight: 	400
-		color: 	#e5e5e5  
-		&:last-child
-			border-right: 1px solid #c3c3c3 	
-		min-height: 	64px
+		font-size: 16px 
+		font-weight: 400
+		color: #e5e5e5  
+		min-height: 64px
 		display: flex	
 		align-items: center	
-		justify-content: center	 
+		justify-content: center
+		
+		@media (max-width: 575px)
+			height: auto
+			min-height: 0 
+			padding: 10px 5px
+		
+		&:last-child
+			border-right: 1px solid #c3c3c3
+			
+		
 	td
 		border: 1px solid #c3c3c3 
 		border-right: none	
 		border-top: none
 		flex: 1	
-		font-size: 	14px 
-		min-height: 	64px
+		font-size: 14px 
+		min-height: 64px
 		display: flex	
 		align-items: center	
 		justify-content: center	 
+		
+		@media (max-width: 575px)
+			height: auto
+			min-height: 0 
+			padding: 10px 5px
+		
 		&:last-child
 			border-right: 1px solid #c3c3c3 
 		

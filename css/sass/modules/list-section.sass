@@ -130,16 +130,17 @@
 				margin-top: 50px
 				transform: none 
 	
-		&--fluid
-			ul
-				height: 100%
-				display: flex	
-				flex-direction: column	
-				align-items: flex-start
-				justify-content: space-around 
-				li	 
-					&:not(:last-child)
-						margin-bottom: 20px
+		@media (min-width: 1200px)
+			&--fluid
+				ul
+					height: 100%
+					display: flex	
+					flex-direction: column	
+					align-items: flex-start
+					justify-content: space-around 
+					li	 
+						&:not(:last-child)
+							margin-bottom: 20px
 						
 
 
@@ -149,6 +150,12 @@
 		padding-left: 80px 
 		padding-right: 15px 
 		
+		@media (max-width: 1430px)
+			padding-left: 15px
+			padding-right: 15px  
+			padding-top: 75px
+			padding-bottom: 75px  
+		
 		&-inner
 			height: 100%
 			padding-bottom: 120px 
@@ -156,11 +163,23 @@
 			width: 390px
 			max-width: 100% 
 			
+			@media (max-width: 1430px)
+				width: 100%
+				
+			@media (max-width: 1199px)
+				padding-bottom: 0 
+			
 			.scroll-y
 				height: 100%
+				
+			.article
+				padding-top: 0 
 			
 			.button-group
 				position: absolute
 				bottom: 0
 				left: 0
 				transform: translateX(0)
+				
+				@media (max-width: 1199px)
+					position: static
