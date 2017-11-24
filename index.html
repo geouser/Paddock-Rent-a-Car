@@ -96,23 +96,29 @@
 
         </aside> <!-- end site-sidbar -->
 
+        <ul class="page-anchors">
+            <li><a href="#section-1" class="active">01</a></li>
+            <li><a href="#section-2">02</a></li>
+            <li><a href="#section-3">03</a></li>
+            <li><a href="#section-4">04</a></li>
+        </ul>
 
-        <section class="offer">
+        <section class="offer" id="section-1">
             <div class="video-container">
-                <video autoplay loop="true" width="1280" height="720">
-                    <source type="video/mp4" src="https://pixabay.com/en/videos/download/video-6782_source.mp4">
+                <video autoplay loop="true" width="1280" height="720" id="video-1">
+                    <source type="video/mp4" src="video/sample.mp4">
                 </video>
             </div>
             <div class="container">
                 <div class="offer__info">   
                     <h1>Cars <i>/</i><span>Sets the tone for your day</span></h1>
-                    <div class="sound-mute"><img src="images/sound.png" alt="">Sound on</div>
                     <div class="button-group">
                         <button class="btn btn--red">Find your car</button>
                         <span>choose from the best</span>
                     </div>
                 </div>
             </div>
+            <div class="sound-mute" data-video="#video-1"><img src="images/sound.png" alt=""><span>Sound on</span></div>
         </section>
 
         <section class="reservation">
@@ -222,7 +228,7 @@
 
 
 
-        <section class="section advantages">
+        <section class="section advantages" id="section-2">
             <div class="container">
 
                 <div class="row">
@@ -398,7 +404,7 @@
 
 
 
-        <section class="section our-cars">
+        <section class="section our-cars" id="section-3">
             <div class="container">
 
                 <div class="row">
@@ -616,7 +622,7 @@
 
 
 
-        <section class="list-section">
+        <section class="list-section" id="section-4">
 
             <div class="image-block" style="background-image: url(images/main-page-list.jpg);">
                 <h2 class="section-title">Process of Car Rental in Dubai</h2>

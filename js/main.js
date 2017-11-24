@@ -40,6 +40,18 @@ jQuery(document).ready(function($) {
         });
     });
 
+    $('.sound-mute').click(function(){
+        var video = $(this).data('video');
+        $(this).toggleClass('muted');
+        if ($(this).hasClass('muted')) {
+            $('' + video + '').prop('muted', true);
+            $(this).children('span').text('Sound off');
+        } else {
+            $('' + video + '').prop('muted', false);
+            $(this).children('span').text('Sound on');
+        }
+    });
+
 
     /*---------------------------
                                   File input logic
@@ -69,12 +81,32 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                 PAGE ANCHORS
     ---------------------------*/
-    $('.page-menu a, .anchor').click(function() {
+    $('.page-anchors a').click(function() {
         $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top - 50
+            scrollTop: $($(this).attr('href')).offset().top
         }, 800);
+        $('.page-anchors a').removeClass('active');
+        $(this).addClass('active');
         return false;
     });
+
+    $(document).on("scroll", onScroll);
+
+    function onScroll(event){
+        var scrollPos = $(document).scrollTop();
+        $('.page-anchors a').each(function () {
+            var currLink = $(this);
+            var wh = $(window).height();
+            var refElement = $(currLink.attr("href"));
+            if (refElement.position().top <= scrollPos + (wh / 1.5) && refElement.position().top + refElement.height() > scrollPos) {
+                $('.page-anchors a').removeClass("active");
+                currLink.addClass("active");
+            }
+            else{
+                currLink.removeClass("active");
+            }
+        });
+    }
 
     /*---------------------------
                                   MENU TOGGLE

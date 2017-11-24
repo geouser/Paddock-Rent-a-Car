@@ -36,8 +36,11 @@
 	font-size: 	12px
 	font-weight: 600  
 	cursor: pointer	
+	transition: all .2s
 	img
 		margin-right: 	10px 
+	&:hover
+		opacity: .6 
 
 .button-group
 	@media (max-width: 1199px)
@@ -86,3 +89,30 @@
 	&--right
 		&:after
 			content: '\e91d'!important
+
+
+.page-anchors
+	list-style-type: none
+	position: fixed
+	z-index: 10
+	right: 30px
+	top: 50%
+	transform: translateY(-50%)  
+	li
+		display: block
+		a
+			display: inline-block
+			line-height: 34px
+			width: 34px
+			color: #828282   
+			font-size: 14px
+			text-align: center
+			border: 1px solid transparent  
+			transition: all .2s 
+			&.active
+				border-color: #BE3B33 
+				font-size: 18px
+				font-weight: 600
+				color: #fff   
+			&:hover
+				color: #fff 
