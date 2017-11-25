@@ -25,10 +25,33 @@
 	&--red
 		background-color: $red
 		border-color: $red
+		position: relative
+		
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border: 1px solid $red
+			transition: all 0.3s ease
+			pointer-events: none
+			
+		&:hover
+			&:before
+				top: -5px
+				bottom: -5px
+				right: -5px
+				left: -5px
 		
 	&--red-o
 		border-color: $red
 		background-color: transparent 
+		
+		&:hover
+			background-color: $red
+			color: #fff 
 
 
 .sound-mute
