@@ -130,6 +130,12 @@ jQuery(document).ready(function($) {
     /*---------------------------
                                   Fancybox
     ---------------------------*/
+    $('.fancybox.request-service').on('click', function(event) {
+        var service = $(this).attr('data-service');
+        var target = $(this).attr('href');
+        $(target).find('.service-title').text(service);
+        $(target).find('input[name="service"]').val(service);
+    }); 
     $('.fancybox').fancybox({
         
     });
@@ -278,6 +284,7 @@ jQuery(document).ready(function($) {
 
         var value = $(this).attr('data-value');
         button.addClass('selected').text(value);
+        input.val(value);
         $(this).siblings().removeClass('selected');
         $(this).addClass('selected');
         list.removeClass('active');

@@ -54,7 +54,7 @@
                     </a>
                 </div>
 
-                <button class="btn btn--red-o make-reservation">Send request</button>
+                <button class="btn btn--red-o make-reservation fancybox" href="#modal-popup-car">Send request</button>
             </div> <!-- end main area -->
 
 
@@ -729,7 +729,108 @@
 
 
 
-        <div id="modal-popup" class="fncb-hide zoom-anim-dialog popup"></div>
+        <div id="modal-popup-service" class="fncb-hide zoom-anim-dialog popup">
+            <div class="popup-header">
+                <h3 class="service-title">Reserve car</h3>
+            </div> <!-- end popup-header -->
+            <div class="popup-body">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" class="form-control" placeholder="Phone No.">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="" cols="30" rows="10" class="form-control" placeholder="Message"></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="service" value="">
+                    <button class="btn btn--red-o">Send</button>
+                </form>    
+            </div> <!-- end popup-body -->
+        </div> <!-- end popup -->
+
+        <div id="modal-popup-car" class="fncb-hide zoom-anim-dialog popup">
+            <div class="popup-header">
+                <h3 class="service-title">Reserve a car</h3>
+            </div> <!-- end popup-header -->
+            <div class="popup-body">
+                <form action="">
+                    <div class="form-group">
+                        <div class="select">
+                            <button class="form-control select-button js-select-button">select a car</button>
+                            <div class="select-list scroll-y">
+                                <ul>
+                                    <li class="list-item" data-value="Ferrari 488">
+                                        <span class="car-image"><img src="images/Ferrari-488-mini.png" alt=""></span>
+                                        <span class="car-name">Ferrari 488</span>
+                                    </li>
+                                    <li class="list-item selected" data-value="Lamborghini Huracan">
+                                        <span class="car-image"><img src="images/Lamborghini-Huracan-mini.png" alt=""></span>
+                                        <span class="car-name">Lamborghini Huracan</span>
+                                    </li>
+                                    <li class="list-item" data-value="McLaren 650s Spider">
+                                        <span class="car-image"><img src="images/McLaren-650s-Spider-mini.png" alt=""></span>
+                                        <span class="car-name">McLaren 650s Spider</span>
+                                    </li>
+                                    <li class="list-item" data-value="Mercedes G63">
+                                        <span class="car-image"><img src="images/Mercedes-G63-mini.png" alt=""></span>
+                                        <span class="car-name">Mercedes G63</span>
+                                    </li>
+                                    <li class="list-item" data-value="Ferrari 488">
+                                        <span class="car-image"><img src="images/Ferrari-488-mini.png" alt=""></span>
+                                        <span class="car-name">Ferrari 488</span>
+                                    </li>
+                                    <li class="list-item" data-value="Lamborghini Huracan">
+                                        <span class="car-image"><img src="images/Lamborghini-Huracan-mini.png" alt=""></span>
+                                        <span class="car-name">Lamborghini Huracan</span>
+                                    </li>
+                                </ul>    
+                            </div>
+                            
+                            <input type="hidden" name="car">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <div class="pseudo-select">
+                                    <input type="text" name="date-start" class="form-control js-date" placeholder="Pick-up date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <div class="pseudo-select">
+                                    <input type="text" name="date-end" class="form-control js-date" placeholder="Drop-off date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" class="form-control" placeholder="Phone No.">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="" cols="30" rows="10" class="form-control" placeholder="Message"></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="service" value="">
+                    <button class="btn btn--red-o">Send</button>
+                </form>    
+            </div> <!-- end popup-body -->
+        </div> <!-- end popup -->
+
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB8OI63bD1KAI4MAo0yz7p0Fj-RiPEZYPk"></script>
