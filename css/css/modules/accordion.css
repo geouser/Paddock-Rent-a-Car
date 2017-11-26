@@ -1,0 +1,98 @@
+.accordion {
+  margin-bottom: 40px;
+}
+
+.accordion h3 {
+  text-transform: uppercase;
+  padding: 22px;
+  padding-right: 17%;
+  position: relative;
+  border: 1px solid #828282;
+  cursor: pointer;
+  margin-top: 10px;
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+  color: #E5E5E5;
+  letter-spacing: .1em;
+}
+
+.accordion h3 i {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 22px;
+  background-color: #be3b33;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 4px;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+
+.accordion h3 i span {
+  display: block;
+  padding-left: 2px;
+  padding-top: 1px;
+  font-weight: 300;
+}
+
+.accordion .ui-accordion-header-active {
+  border-bottom-color: transparent;
+}
+
+.accordion .ui-accordion-header-active i {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.accordion div {
+  padding: 0 22px 22px;
+  border: 1px solid #828282;
+  border-top: none;
+  color: #C3C3C3;
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+  .accordion h3 {
+    font-size: 14px;
+    padding: 18px;
+    padding-right: 17%;
+  }
+}
+
+@media (max-width: 500px) {
+  .accordion h3 i {
+    right: 18px;
+    height: 22px;
+    width: 22px;
+  }
+  .accordion h3 i span {
+    padding-left: 1px;
+  }
+}
+
+@media (max-width: 500px) {
+  .accordion div {
+    font-size: 12px;
+    padding: 0 18px 18px;
+  }
+}
